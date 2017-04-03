@@ -18,6 +18,7 @@ class CSVParser(object):
     filehandle = None
     check_cols = False
     string_types = (type(u''), type(''))
+    endings = 0
 
     def list_rows(self, rows):
         """ CSV Reader returns an iterable, but as we possibly need to
