@@ -89,6 +89,8 @@ class CSVParser(object):
 
         if rows:
             for row in rows:
+		if pyversion == 3:
+                    row = row.decode(self.charset)
                 if type(row) in self.string_types:
                     # FIXME: Works for test fixtures - but rather hacky csvreader replacement regex splitter
                     # breaks unless empty cols have a space added!
